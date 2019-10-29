@@ -35,11 +35,6 @@ h3{
 	line-height: 30px;
 	text-align: center;
 }
-h4{
-	color: #1E6E68;
-	line-height: 20px;
-	text-align: center;
-}
 
 #documentation{			/* Define the formatting for the <div id="asssignments"> box */
 	width: 720px;
