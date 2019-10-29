@@ -1,0 +1,57 @@
+*{
+	margin:0 0 6px;
+}
+header{
+	text-align:left;
+	color:white;
+	background-color:black;
+	padding:30px 150px;
+}
+body {
+	background-color: #4286f4;	/*	Use the Color Picker to find the hex code of your favorite color
+									http://www.w3schools.com/tags/ref_colorpicker.asp */
+}
+body p {
+	padding-left: 2em;
+}
+
+
+li, li a{						/* Define the formatting for the links to the labs */
+	list-style: none;
+	background-color: #43ABA4;
+	text-align: center;
+	color: white;
+	border-radius: 3px;
+	padding: 2px;
+}
+
+h2{
+	width: 100%;
+	color: #1E6E68;
+	line-height: 40px;
+}
+h3{
+	color: #1E6E68;
+	line-height: 30px;
+	text-align: center;
+}
+
+#assignments{			/* Define the formatting for the <div id="asssignments"> box */
+	width: 720px;
+	margin: 0 auto;
+	box-shadow: 0 2px 15px #EEE;
+	min-height: 300px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: white;
+}
+#assignments ul {
+	float:left;
+	width: 300px;
+}
+
+hr{						/* Define the formatting for the <hr /> line between "Course Work" and lab links */
+	margin: 10px 0;
+	width: 100%;
+	float: left;
+}
