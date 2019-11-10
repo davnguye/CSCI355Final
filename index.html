@@ -2,15 +2,13 @@
 <html>
     <head>
         <!-- BootstrapCDN for styling-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	    
-        <!-- BootstrapCDN for JS and jQuery -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	
+	<!-- jQuery functionality -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+	<!-- Bootstrap CDN -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	    
         <!--CSS for theming-->
         <link rel="stylesheet" type="text/css" href="css/websiteTheme.css">
@@ -24,41 +22,46 @@
     </header>
 
     <body>
-        <div id="front">
+        <div id="front" class="jumbotron text-center">
             <!--Empty for now, just a "front page" summary of the project, if you will-->
+		<h1>THIS IS A SUMMARY OF OUR CSCI 355 FINAL PROJECT</h1>
         </div>
 
-        <div id="documentation">
+	<div class="container">
+		<div class ="row">
+			<div id="documentation" class="col-sm-3">
 
-            <h3>Documentation</h3> 
-            <ul>
-                <!-- Max's Project Proposal -->
-                <li><a href = "Documentation/Final Project Proposal.pdf">Max Comer's Project Proposal PDF</a> </li>
-                
-                <!-- David's Project Proposal -->
-                <li><a href = "Documentation/DN Final Project Proposal.pdf">David Nguyen's Project Proposal PDF</a></li>
-            </ul>
-        
-        </div>
+			    <h3>Documentation</h3> 
+			    <ul>
+				<!-- Max's Project Proposal -->
+				<li><a href = "Documentation/Final Project Proposal.pdf">Max Comer's Project Proposal PDF</a> </li>
 
-        <div id="progress">
-            <!--This can be expanded on-->
-            <h3>Progress</h3>
-            <p>Our progress so far has been centered on research. Our project involves creating a graph of an indoor space. 
-                We have been looking into the best ways to represent multiple floors in our graph and what existing technologies
-		could be useful in creating our project.
-                Below are the sources we have explored.</p>
-            <ul>
-                <li>Study on directed indoor path-finding</li>
-                <li><a href="https://developers.google.com/maps/documentation/distance-matrix/intro">Google Distance Matrix API</a></li>
-		<li><a href = "https://www.cise.ufl.edu/~mschneid/Research/papers/YS10AGILE.pdf">iNav Indoor Navigation Model</a></li>
-		<li><a href = "https://pdfs.semanticscholar.org/4be8/3d168fd8582ca8773469b2da06560a6f288e.pdf">Indoor Spatial Analysis Using Space Syntax</a></li>
-		<li><a href = "https://www.opengeospatial.org/standards/citygml">Standards of Indoor Spatial Information</a></li>
-            </ul>
-	    <p>
-		Our next step will be mapping out our possible paths inside the SL Building.
-	    </p>
-        </div>
+				<!-- David's Project Proposal -->
+				<li><a href = "Documentation/DN Final Project Proposal.pdf">David Nguyen's Project Proposal PDF</a></li>
+			    </ul>
+
+			</div>
+
+			<div id="progress" class="col-sm-3">
+			    <!--This can be expanded on-->
+			    <h3>Progress</h3>
+			    <p>Our progress so far has been centered on research. Our project involves creating a graph of an indoor space. 
+				We have been looking into the best ways to represent multiple floors in our graph and what existing technologies
+				could be useful in creating our project.
+				Below are the sources we have explored.</p>
+			    <ul>
+				<li>Study on directed indoor path-finding</li>
+				<li><a href="https://developers.google.com/maps/documentation/distance-matrix/intro">Google Distance Matrix API</a></li>
+				<li><a href = "https://www.cise.ufl.edu/~mschneid/Research/papers/YS10AGILE.pdf">iNav Indoor Navigation Model</a></li>
+				<li><a href = "https://pdfs.semanticscholar.org/4be8/3d168fd8582ca8773469b2da06560a6f288e.pdf">Indoor Spatial Analysis Using Space Syntax</a></li>
+				<li><a href = "https://www.opengeospatial.org/standards/citygml">Standards of Indoor Spatial Information</a></li>
+			    </ul>
+			    <p>
+				Our next step will be mapping out our possible paths inside the SL Building.
+			    </p>
+			</div>
+		</div>
+	    </div>
 
     </body>
 </html>
