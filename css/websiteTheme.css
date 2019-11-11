@@ -37,7 +37,7 @@ h3{
 }
 
 #documentation{			/* Define the formatting for the <div id="asssignments"> box */
-	width: 720px;
+	width: auto;
 	margin: 0 auto;
 	box-shadow: 0 2px 15px #EEE;
 	min-height: 300px;
@@ -47,7 +47,7 @@ h3{
 }
 
 #progress{
-	width: 720px;
+	width: auto;
 	margin: 0 auto;
 	box-shadow: 0 2px 15px #EEE;
 	min-height: 300px;
