@@ -36,8 +36,8 @@ h3{
 	text-align: center;
 }
 
-documentation{			/* Define the formatting for the <div id="asssignments"> box */
-	margin: 0 auto;
+#documentation{			/* Define the formatting for the <div id="asssignments"> box */
+	margin: 10 auto;
 	box-shadow: 0 2px 15px #EEE;
 	min-height: 300px;
 	padding: 15px;
@@ -45,8 +45,8 @@ documentation{			/* Define the formatting for the <div id="asssignments"> box */
 	background-color: white;
 }
 
-progress{
-	margin: 0 auto;
+#progress{
+	margin: 10 auto;
 	box-shadow: 0 2px 15px #EEE;
 	min-height: 300px;
 	padding: 15px;
