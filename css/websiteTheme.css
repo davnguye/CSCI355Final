@@ -55,8 +55,8 @@ h3{
 }
 #graph{
       	position: center;
-      	width: 100%;
-      	height: 100%;
+      	width: 300px;
+      	height: 300px;
 }
 #assignments ul {
 	float:left;
