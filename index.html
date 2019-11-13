@@ -6,11 +6,24 @@
   	
 	<!-- jQuery functionality -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
+	
+	<!-- sigmaJS for graphs -->
+	<script src="https://cdn.jsdelivr.net/npm/sigma@1.2.1/build/sigma.require.min.js"></script>
+  	
+	<!-- script for graph in "graph" div -->
+	<script>
+	  	sigma.parsers.json('data.json', {
+			container: 'graph',
+			settings: {
+			defaultNodeColor: '#ec5148'
+			}
+	  	});
+	</script>
+	    
 	<!-- Bootstrap CDN -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	    
-        <!--CSS for theming-->
+        <!-- CSS for theming -->
         <link rel="stylesheet" type="text/css" href="css/websiteTheme.css">
 		
 	<title>CSCI 355 Final Project</title>
@@ -25,6 +38,7 @@
         <div id="front" class="jumbotron text-center">
             <!--Empty for now, just a "front page" summary of the project, if you will-->
 		<h1>THIS IS A SUMMARY OF OUR CSCI 355 FINAL PROJECT</h1>
+		<div id="graph"><!--This div contains a sigmaJS graph of SL 2nd Floor--></div>
         </div>
 
 	<div class="container">
