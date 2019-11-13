@@ -1,0 +1,198 @@
+{
+    "nodes": [
+      {
+        "id": "n0",
+        "label": "East Exit",
+        "x": 0,
+        "y": 0,
+        "size": 3
+      },
+      {
+        "id": "n1",
+        "label": "North East Corner",
+        "x": 0,
+        "y": 3,
+        "size": 2
+      },
+      {
+        "id": "n2",
+        "label": "East Hallway",
+        "x": 3,
+        "y": 3,
+        "size": 1
+      },
+      {
+        "id": "n3",
+        "label": "South East Corner",
+        "x": 6,
+        "y": 3,
+        "size": 2
+      },
+      {
+        "id": "n4",
+        "label": "South Hallway",
+        "x": 6,
+        "y": 6,
+        "size": 1
+      },
+      {
+        "id": "n5",
+        "label": "South West Corner",
+        "x": 6,
+        "y": 9,
+        "size": 2
+      },
+      {
+        "id": "n6",
+        "label": "West Hallway",
+        "x": 3,
+        "y": 9,
+        "size": 1
+      },
+      {
+        "id": "n7",
+        "label": "North West Corner",
+        "x": 0,
+        "y": 9,
+        "size": 2
+      },
+      {
+        "id": "n8",
+        "label": "North Hallway",
+        "x": 0,
+        "y": 6,
+        "size": 1
+      },
+      {
+        "id": "n9",
+        "label": "West Exit",
+        "x": 0,
+        "y": 12,
+        "size": 3
+      },
+      {
+        "id": "n10",
+        "label": "SL 280",
+        "x": 3,
+        "y": 1,
+        "size": 3
+      },
+      {
+        "id": "n11",
+        "label": "LD Building Exit",
+        "x": 9,
+        "y": 6,
+        "size": 3
+      },
+      {
+        "id": "n12",
+        "label": "SL 251",
+        "x": 1.5,
+        "y": 4.5,
+        "size": 3
+      },
+      {
+        "id": "n13",
+        "label": "SL 247",
+        "x": 1.5,
+        "y": 7.5,
+        "size": 3
+      },
+      {
+        "id": "n14",
+        "label": "Men's Restroom",
+        "x": 3,
+        "y": 7.5,
+        "size": 3
+      },
+      {
+        "id": "n15",
+        "label": "Women's Restroom",
+        "x": 3,
+        "y": 10.5,
+        "size": 3
+      }
+    ],
+    "edges": [
+      {
+        "id": "e0",
+        "source": "n0",
+        "target": "n1"
+      },
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2"
+      },
+      {
+        "id": "e2",
+        "source": "n2",
+        "target": "n3"
+      },
+      {
+        "id": "e3",
+        "source": "n3",
+        "target": "n4"
+      },
+      {
+        "id": "e4",
+        "source": "n4",
+        "target": "n5"
+      },
+      {
+        "id": "e5",
+        "source": "n5",
+        "target": "n6"
+      },
+      {
+        "id": "e6",
+        "source": "n6",
+        "target": "n7"
+      },
+      {
+        "id": "e7",
+        "source": "n7",
+        "target": "n8"
+      },
+      {
+        "id": "e8",
+        "source": "n8",
+        "target": "n1"
+      },
+      {
+        "id": "e9",
+        "source": "n7",
+        "target": "n9"
+      },
+      {
+        "id": "e10",
+        "source": "n8",
+        "target": "n12"
+      },
+      {
+        "id": "e11",
+        "source": "n8",
+        "target": "n13"
+      },
+      {
+        "id": "e12",
+        "source": "n4",
+        "target": "n11"
+      },
+      {
+        "id": "e13",
+        "source": "n6",
+        "target": "n14"
+      },
+      {
+        "id": "e14",
+        "source": "n6",
+        "target": "n15"
+      },
+      {
+        "id": "e15",
+        "source": "n2",
+        "target": "n10"
+      }
+    ]
+  }
