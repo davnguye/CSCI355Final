@@ -137,7 +137,7 @@ class SLGraph{
             //LD intersection (I1)
             this.nodes[4].setNeighbor(this.nodes[0], this.nodes[14]);
             //South hall intersection
-            this.nodes[5].setNeighbor(this.nodes[6], this.nodes[7], this.nodes[17]);
+            this.nodes[5].setNeighbor(this.nodes[6], this.nodes[7]);
             //Southwest corner
             this.nodes[6].setNeighbor(this.nodes[5], this.nodes[10]);
             //Southeast corner
