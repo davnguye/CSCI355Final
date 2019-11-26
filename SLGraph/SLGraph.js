@@ -173,7 +173,29 @@ class SLGraph{
             //SL280
             this.nodes[22].setNeighbor(this.nodes[13]);
         }//end addNodeNeighbor
-        
 
+        //Method to add graph edge
+        populateEdges(){
+            this.edges = [];
+            var id = 0;
+            //Creating a path from each node to its neighboring nodes
+            //Adds two-way paths
+            this.nodes.forEach(node => {
+                node.neighbors.forEach( neighbor=> {
+                    this.edges.push({id: "G"+id, source:node.id, target: neighbor.neighbor.id, weight: neighbor.distance});
+                    id++;
+                });
+            });
+        }//end populate edges
 
+        //Method to create JSON file with graph data
+       /* createGraphJSON(){
+            var graphJSON = JSON.stringify(this.edges);
+            var fs = require('fs');
+            fs.writeFile("graph.json", graphJSON, function(error, result){
+                if(error) console.log('error', error);
+            });
+        }//end create graph JSON
+    */
+  
 }//end SL Graph class   
