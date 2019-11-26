@@ -213,12 +213,6 @@
         "weight":1.4
     },
     {
-        "id":"G12",
-        "source":"I2",
-        "target":"D3",
-        "weight":0.8609297300012354
-    },
-    {
         "id":"G13",
         "source":"I3",
         "target":"I2",
