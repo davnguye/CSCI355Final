@@ -135,7 +135,7 @@ class SLGraph{
             //Stairway intersection (I0)
             this.nodes[3].setNeighbor(this.nodes[0], this.nodes[1], this.nodes[2], this.nodes[4], this.nodes[17]);
             //LD intersection (I1)
-            this.nodes[4].setNeighbor(this.nodes[0], this.nodes[14]);
+            this.nodes[4].setNeighbor(this.nodes[3], this.nodes[14]);
             //South hall intersection
             this.nodes[5].setNeighbor(this.nodes[6], this.nodes[7]);
             //Southwest corner
