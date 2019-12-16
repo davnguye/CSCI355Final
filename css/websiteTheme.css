@@ -18,22 +18,11 @@ body p {
 
 li, li a{						/* Define the formatting for the links to the labs */
 	list-style: none;
-	background-color: #43ABA4;
+	background-color: #4286f4;
 	text-align: center;
 	color: white;
 	border-radius: 3px;
 	padding: 2px;
-}
-
-h2{
-	width: 100%;
-	color: #1E6E68;
-	line-height: 40px;
-}
-h3{
-	color: #1E6E68;
-	line-height: 30px;
-	text-align: center;
 }
 
 #documentation{			/* Define the formatting for the <div id="asssignments"> box */
