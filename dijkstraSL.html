@@ -26,9 +26,6 @@
         </script>
 
         <!-- nodeJS -->
-        <script src="nodejs/node_modules/npm/lib/"></script>
-
-        <!-- requireJS -->
         <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
             
         <!-- Bootstrap CDN -->
@@ -40,7 +37,7 @@
         <!-- calculate() function -->
         <script>
             function calculate() {
-                g.dijkstra(startNode, endNode);
+                g.dijkstra(document.getElementsByName("startNode"), document.getElementsByName("endNode"));
                 g.createGraphJSON("tempData.json");
                 sigma.parsers.json('Main/tempData.json',
                 {
