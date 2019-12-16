@@ -1,3 +1,17 @@
+/*var browserify = require('browserify');
+var http = require('http');
+
+http.createServer(function (req, res) {
+    if (req.url === '/bundle.js') {
+        res.setHeader('content-type', 'application/javascript');
+        var b = browserify(__dirname + '/Main.js').bundle();
+        b.on('error', console.error);
+        b.pipe(res);
+    }
+    else res.writeHead(404, 'not found')
+});*/
+
+
 /*
 
 Priority Queue class needed for dijkstras algo. Implemented using array.
@@ -206,7 +220,149 @@ class SLGraph{
             //Using node.js file sync to read in node data
             var fs = require('fs');
             //Reading JSON file into string
-            var data = fs.readFileSync('./nodes.json', 'utf8');
+fs.writeFile('/nodes.json', `[
+	{
+		"id": "O",
+		"label": "Origin",
+		"x": "0",
+		"y": "0"
+	},
+	{
+		"id": "E0",
+		"label": "West Elevator",
+		"x": "-0.04",
+		"y": "0.48"
+	},
+	{
+		"id": "E1",
+		"label": "East Elevator",
+		"x": "0.16",
+		"y": "0.48"
+	},
+	{
+		"id": "I0",
+		"label": "Intersection",
+		"x": "0",
+		"y": "0.2"
+	},
+	{
+		"id": "I1",
+		"label": "Intersection",
+		"x": "-0.24",
+		"y": "0.2"
+	},
+	{
+		"id": "I2",
+		"label": "South Hall",
+		"x": "-0.24",
+		"y": "0.94"
+	},
+	{
+		"id": "I3",
+		"label": "SW",
+		"x": "-0.74",
+		"y": "0.94"
+	},
+	{
+		"id": "I4",
+		"label": "SE",
+		"x": "1.1599999999999999",
+		"y": "0.94"
+	},
+	{
+		"id": "I5",
+		"label": "NW",
+		"x": "-0.74",
+		"y": "2.84"
+	},
+	{
+		"id": "I6",
+		"label": "NE",
+		"x": "1.1599999999999999",
+		"y": "2.84"
+	},
+	{
+		"id": "I7",
+		"label": "West Hall",
+		"x": "-0.74",
+		"y": "1.64"
+	},
+	{
+		"id": "I8",
+		"label": "North Hall 247",
+		"x": "-0.1",
+		"y": "2.84"
+	},
+	{
+		"id": "I9",
+		"label": "North Hall 251",
+		"x": "0.48",
+		"y": "2.84"
+	},
+	{
+		"id": "I10",
+		"label": "East Hall",
+		"x": "1.1599999999999999",
+		"y": "1.18"
+	},
+	{
+		"id": "D0",
+		"label": "LD Exit",
+		"x": "-0.24",
+		"y": "0.86"
+	},
+	{
+		"id": "D1",
+		"label": "West Exit",
+		"x": "-3.14",
+		"y": "2.84"
+	},
+	{
+		"id": "D2",
+		"label": "East Exit",
+		"x": "1.9",
+		"y": "2.84"
+	},
+	{
+		"id": "D3",
+		"label": "Student Lounge",
+		"x": "0.2",
+		"y": "0.2"
+	},
+	{
+		"id": "B0",
+		"label": "Women's Restroom",
+		"x": "-0.84",
+		"y": "1.64"
+	},
+	{
+		"id": "B1",
+		"label": "Men's Restroom",
+		"x": "-0.64",
+		"y": "1.64"
+	},
+	{
+		"id": "R5",
+		"label": "SL247",
+		"x": "-0.1",
+		"y": "2.72"
+	},
+	{
+		"id": "R6",
+		"label": "SL251",
+		"x": "0.48",
+		"y": "2.72"
+	},
+	{
+		"id": "R13",
+		"label": "SL280",
+		"x": "1.26",
+		"y": "1.18"
+	}
+]`, function(error, result){
+    if(error) console.log('error', error);
+});
+            var data = fs.readFileSync('/nodes.json','utf8');
             //Parsing JSON string into object array
             var nodeArray = JSON.parse(data);
             //Populating node array
@@ -313,7 +469,8 @@ class SLGraph{
         //Method to create JSON file with graph data
         createGraphJSON(outputFile){
             //Creating a file stream (part of node modules)
-            var fs = require('fs');
+                var fs = require('fs');
+            //var fs = require('fs');
             //Loading nodes data into array
             var nodeArr = JSON.parse(fs.readFileSync('./nodes.json', 'utf8'));
             //Adjusting and adding node infor for readability
@@ -428,15 +585,12 @@ Shows how to access JSON files from the server, could change code including file
 
 */
 
-var g = new SLGraph();
+//var g = new SLGraph();
 
-g.populateNodes();
-g.populateEdges();
-
-var mypath = g.dijkstra(g.nodes[0], g.nodes[20]);
+//var mypath = g.dijkstra(g.nodes[0], g.nodes[20]);
 
 
-for (let i = 1; i < mypath.path.length; i++) {
+/*for (let i = 1; i < mypath.path.length; i++) {
     //Find the edge between two nodes in path
     let edge = g.edges.filter(function(x){return x.source == mypath.path[i-1].id && x.target == mypath.path[i].id});
     //Finding reverse edge (since two-way/undirected)
@@ -448,6 +602,6 @@ for (let i = 1; i < mypath.path.length; i++) {
     //Changing color of the path to yellow
     g.edges[edgeI].color = "#ffd500";
     g.edges[revI].color = "#ffd500";
-}//end for
+}//end for*/
 
-g.createGraphJSON("tempData.JSON")
+//g.createGraphJSON("tempData.JSON")
