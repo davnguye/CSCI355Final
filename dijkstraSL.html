@@ -62,17 +62,25 @@
                 g.populateNodes();
                 g.populateEdges();
                 var e = document.getElementById("startNode");
+                /*
                 var startNodeID = e.options[e.selectedIndex].value;
                 var startNode = g.nodes.filter(function(x){return x.id === startNodeID});
                 var startNodeI = g.nodes.indexOf(startNode[0]);
+                */
                 var f = document.getElementById("endNode");
+                /*
                 var endNodeID = f.options[f.selectedIndex].value;
                 var endNode = g.nodes.filter(function(x){return x.id === endNodeID});
                 var endNodeI = g.nodes.indexOf(endNode[0]);
+                */
                 //startNode.replace(/['"]+/g, '');
-                console.log(g.nodes[startNodeI]);
+                //console.log(g.nodes[startNodeI]);
 
                 var mypath = g.dijkstra(g.nodes[startNodeI], g.nodes[endNodeI]);
+
+                //****IMPORTANT****
+                //visualizing the path via a JSON file will not be included in final project
+                /*
                 for (let i = 1; i < mypath.path.length; i++) {
                     //Find the edge between two nodes in path
                     let edge = g.edges.filter(function(x){return x.source == mypath.path[i-1].id && x.target == mypath.path[i].id});
@@ -92,7 +100,8 @@
                 //var outputFile = JSON.parse(fileString);
                 //console.log(outputFile);
                 console.log("Created graph");
-                sigma.parsers.json(fileString,
+                */
+                sigma.parsers.json('json/graphData.json',   //supposed to utilize tempData.json listed above, graphData.json is a placeholder
                 {
                     container: 'result',
                     settings: {
