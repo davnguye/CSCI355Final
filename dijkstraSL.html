@@ -16,14 +16,7 @@
         
         <!-- script for graph in "graph" div -->
         <script>
-            sigma.parsers.json('json/data.json',
-            {
-                container: 'graph',
-                settings: {
-                defaultNodeColor: '#ec5148'
-                }
-            });
-            sigma.parsers.json('Main/tempData.json',
+            sigma.parsers.json('json/graphData.json',
             {
                 container: 'graph',
                 settings: {
@@ -126,7 +119,17 @@
 
                     <!-- calculate() function -->
                     <script>
-                        
+                        function calculate() {
+                            g.dijkstra(startNode, endNode);
+                            g.createGraphJSON("tempData.json");
+                            sigma.parsers.json('Main/tempData.json',
+                            {
+                                container: 'result',
+                                settings: {
+                                defaultNodeColor: '#ec5148'
+                                }
+                            });
+                        }
                     </script>
                 </div>
             </div>
