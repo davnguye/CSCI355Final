@@ -28,9 +28,24 @@
         <!-- Bootstrap CDN -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
             
-            <!-- CSS for theming -->
-            <link rel="stylesheet" type="text/css" href="css/websiteTheme.css">
-            
+        <!-- CSS for theming -->
+        <link rel="stylesheet" type="text/css" href="css/websiteTheme.css">
+    
+        <!-- calculate() function -->
+        <script>
+            function calculate() {
+                g.dijkstra(startNode, endNode);
+                g.createGraphJSON("tempData.json");
+                sigma.parsers.json('Main/tempData.json',
+                {
+                    container: 'result',
+                    settings: {
+                    defaultNodeColor: '#ec5148'
+                    }
+                });
+            }
+        </script>
+        
         <title>Dijkstra's in SL</title>
     </head>
     
@@ -116,21 +131,6 @@
                     </select>
 
                     <button onclick="calculate()">Calculate</button>
-
-                    <!-- calculate() function -->
-                    <script>
-                        function calculate() {
-                            g.dijkstra(startNode, endNode);
-                            g.createGraphJSON("tempData.json");
-                            sigma.parsers.json('Main/tempData.json',
-                            {
-                                container: 'result',
-                                settings: {
-                                defaultNodeColor: '#ec5148'
-                                }
-                            });
-                        }
-                    </script>
                 </div>
             </div>
 	    </div>
