@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript" src="/node_modules/browserfs/dist/browserfs.js"></script>
+        <script type="text/javascript">
+        // Installs globals onto window:
+        // * Buffer
+        // * require (monkey-patches if already defined)
+        // * process
+        // You can pass in an arbitrary object if you do not wish to pollute
+        // the global namespace.
+        BrowserFS.install(window);
+        // Configures BrowserFS to use the LocalStorage file system.
+        BrowserFS.configure({
+            fs: "LocalStorage"
+        }, function(e) {
+            if (e) {
+            // An error happened!
+            throw e;
+            }
+            // Otherwise, BrowserFS is ready-to-use!
+        });
+        </script>
         <!-- BootstrapCDN for styling-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   	
@@ -37,9 +57,36 @@
         <!-- calculate() function -->
         <script>
             function calculate() {
-                g.dijkstra(document.getElementsByName("startNode"), document.getElementsByName("endNode"));
+                var g = new SLGraph();
+                g.populateNodes();
+                g.populateEdges();
+                var e = document.getElementById("startNode");
+                var startNodeID = e.options[e.selectedIndex].value;
+                var startNode = g.nodes.filter(function(x){return x.id === startNodeID});
+                var startNodeI = g.nodes.indexOf(startNode[0]);
+                var f = document.getElementById("endNode");
+                var endNodeID = f.options[f.selectedIndex].value;
+                var endNode = g.nodes.filter(function(x){return x.id === endNodeID});
+                var endNodeI = g.nodes.indexOf(endNode[0]);
+                //startNode.replace(/['"]+/g, '');
+                console.log(g.nodes[startNodeI]);
+
+                var mypath = g.dijkstra(g.nodes[startNodeI], g.nodes[endNodeI]);
+                for (let i = 1; i < mypath.path.length; i++) {
+                    //Find the edge between two nodes in path
+                    let edge = g.edges.filter(function(x){return x.source == mypath.path[i-1].id && x.target == mypath.path[i].id});
+                    //Finding reverse edge (since two-way/undirected)
+                    let reverseEdge = g.edges.filter(function(x){return x.target == mypath.path[i-1].id && x.source == mypath.path[i].id});
+                    //Finding the index of the edge in edges array
+                    let edgeI = g.edges.indexOf(edge[0]);
+                    //Finding the reversed path index
+                    let revI = g.edges.indexOf(reverseEdge[0]);
+                    //Changing color of the path to yellow
+                    g.edges[edgeI].color = "#ffd500";
+                    g.edges[revI].color = "#ffd500";
+                }//end for
                 g.createGraphJSON("tempData.json");
-                sigma.parsers.json('Main/tempData.json',
+                sigma.parsers.json('./tempData.json',
                 {
                     container: 'result',
                     settings: {
@@ -79,8 +126,13 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h2 style="color: black">Start Node:</h2>
+<<<<<<< HEAD
                     <select name="startNode" class="selectpicker" title="Select Start Node" required>
                         <option value="g.nodes[0]">LD Stairwell</option>
+=======
+                    <select id="startNode" required>
+                        <option value= "O">LD Stairwell</option>
+>>>>>>> df96d0204893bacb583d9c242b439bc7a7984491
                         <option value="g.nodes[1]">West Elevator</option>
                         <option value="g.nodes[2]">East Elevator</option>
                         <option value="g.nodes[3]">Stairway intersection (I0)</option>
@@ -108,9 +160,13 @@
 
                 <div class="col-sm-4">
                     <h2 style="color: black">End Node:</h2>
+<<<<<<< HEAD
                     <select name="endNode" class="selectpicker" title="Select End Node" required>
+=======
+                    <select id="endNode" required>
+>>>>>>> df96d0204893bacb583d9c242b439bc7a7984491
                         <option value="g.nodes[0]">LD Stairwell</option>
-                        <option value="g.nodes[1]">West Elevator</option>
+                        <option value="E0">West Elevator</option>
                         <option value="g.nodes[2]">East Elevator</option>
                         <option value="g.nodes[3]">Stairway intersection (I0)</option>
                         <option value="g.nodes[4]">LD intersection (I1)</option>
