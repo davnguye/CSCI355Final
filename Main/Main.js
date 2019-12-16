@@ -1,3 +1,17 @@
+/*var browserify = require('browserify');
+var http = require('http');
+
+http.createServer(function (req, res) {
+    if (req.url === '/bundle.js') {
+        res.setHeader('content-type', 'application/javascript');
+        var b = browserify(__dirname + '/Main.js').bundle();
+        b.on('error', console.error);
+        b.pipe(res);
+    }
+    else res.writeHead(404, 'not found')
+});*/
+
+
 /*
 
 Priority Queue class needed for dijkstras algo. Implemented using array.
@@ -206,7 +220,7 @@ class SLGraph{
             //Using node.js file sync to read in node data
             var fs = require('fs');
             //Reading JSON file into string
-            var data = fs.readFileSync('./nodes.json', 'utf8');
+            var data = fs.readFileSync('SLGraph/nodes.json', 'utf8');
             //Parsing JSON string into object array
             var nodeArray = JSON.parse(data);
             //Populating node array
@@ -313,7 +327,8 @@ class SLGraph{
         //Method to create JSON file with graph data
         createGraphJSON(outputFile){
             //Creating a file stream (part of node modules)
-            var fs = require('fs');
+                var fs = require('fs');
+            //var fs = require('fs');
             //Loading nodes data into array
             var nodeArr = JSON.parse(fs.readFileSync('./nodes.json', 'utf8'));
             //Adjusting and adding node infor for readability
@@ -428,15 +443,12 @@ Shows how to access JSON files from the server, could change code including file
 
 */
 
-var g = new SLGraph();
+//var g = new SLGraph();
 
-g.populateNodes();
-g.populateEdges();
-
-var mypath = g.dijkstra(g.nodes[0], g.nodes[20]);
+//var mypath = g.dijkstra(g.nodes[0], g.nodes[20]);
 
 
-for (let i = 1; i < mypath.path.length; i++) {
+/*for (let i = 1; i < mypath.path.length; i++) {
     //Find the edge between two nodes in path
     let edge = g.edges.filter(function(x){return x.source == mypath.path[i-1].id && x.target == mypath.path[i].id});
     //Finding reverse edge (since two-way/undirected)
@@ -448,6 +460,6 @@ for (let i = 1; i < mypath.path.length; i++) {
     //Changing color of the path to yellow
     g.edges[edgeI].color = "#ffd500";
     g.edges[revI].color = "#ffd500";
-}//end for
+}//end for*/
 
-g.createGraphJSON("tempData.JSON")
+//g.createGraphJSON("tempData.JSON")

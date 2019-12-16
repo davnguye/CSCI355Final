@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript" src="/node_modules/browserfs/dist/browserfs.js"></script>
+        <script type="text/javascript">
+        // Installs globals onto window:
+        // * Buffer
+        // * require (monkey-patches if already defined)
+        // * process
+        // You can pass in an arbitrary object if you do not wish to pollute
+        // the global namespace.
+        BrowserFS.install(window);
+        // Configures BrowserFS to use the LocalStorage file system.
+        BrowserFS.configure({
+            fs: "LocalStorage"
+        }, function(e) {
+            if (e) {
+            // An error happened!
+            throw e;
+            }
+            // Otherwise, BrowserFS is ready-to-use!
+        });
+        </script>
         <!-- BootstrapCDN for styling-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   	
@@ -37,9 +57,27 @@
         <!-- calculate() function -->
         <script>
             function calculate() {
-                g.dijkstra(document.getElementsByName("startNode"), document.getElementsByName("endNode"));
+
+                var g = new SLGraph();
+                g.populateNodes();
+                g.populateEdges();
+
+                var mypath = g.dijkstra(document.getElementsByName("startNode"), document.getElementsByName("endNode"));
+                for (let i = 1; i < mypath.path.length; i++) {
+                    //Find the edge between two nodes in path
+                    let edge = g.edges.filter(function(x){return x.source == mypath.path[i-1].id && x.target == mypath.path[i].id});
+                    //Finding reverse edge (since two-way/undirected)
+                    let reverseEdge = g.edges.filter(function(x){return x.target == mypath.path[i-1].id && x.source == mypath.path[i].id});
+                    //Finding the index of the edge in edges array
+                    let edgeI = g.edges.indexOf(edge[0]);
+                    //Finding the reversed path index
+                    let revI = g.edges.indexOf(reverseEdge[0]);
+                    //Changing color of the path to yellow
+                    g.edges[edgeI].color = "#ffd500";
+                    g.edges[revI].color = "#ffd500";
+                }//end for
                 g.createGraphJSON("tempData.json");
-                sigma.parsers.json('Main/tempData.json',
+                sigma.parsers.json('./tempData.json',
                 {
                     container: 'result',
                     settings: {
