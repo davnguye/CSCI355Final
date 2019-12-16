@@ -24,6 +24,9 @@
                 }
             });
         </script>
+
+        <!-- nodeJS -->
+        <script src="nodejs/node_modules/npm/lib/"></script>
             
         <!-- Bootstrap CDN -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -77,7 +80,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h2>Start Node:</h2>
-                    <select name="startNode">
+                    <select name="startNode" required>
                         <option value="g.nodes[0]">LD Stairwell</option>
                         <option value="g.nodes[1]">West Elevator</option>
                         <option value="g.nodes[2]">East Elevator</option>
@@ -104,7 +107,7 @@
                     </select>
 
                     <h2>End Node:</h2>
-                    <select name="endNode">
+                    <select name="endNode" required>
                         <option value="g.nodes[0]">LD Stairwell</option>
                         <option value="g.nodes[1]">West Elevator</option>
                         <option value="g.nodes[2]">East Elevator</option>
