@@ -2,6 +2,7 @@
 <html>
     <head>
         <script type="text/javascript" src="/node_modules/browserfs/dist/browserfs.js"></script>
+        <!-- THIS IS NOT BEING USED
         <script type="text/javascript">
         // Installs globals onto window:
         // * Buffer
@@ -21,6 +22,7 @@
             // Otherwise, BrowserFS is ready-to-use!
         });
         </script>
+        -->
         <!-- BootstrapCDN for styling-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   	
@@ -44,6 +46,15 @@
                 defaultNodeColor: '#ec5148'
                 }
             });
+
+            sigma.parsers.json('json/graphData.json',   //supposed to utilize tempData.json listed above, graphData.json is a placeholder
+                {
+                    container: 'result',
+                    settings: {
+                    defaultNodeColor: '#ec5148'
+                    }
+                });
+
         </script>
 
         <!-- nodeJS -->
@@ -62,17 +73,13 @@
                 g.populateNodes();
                 g.populateEdges();
                 var e = document.getElementById("startNode");
-                /*
                 var startNodeID = e.options[e.selectedIndex].value;
                 var startNode = g.nodes.filter(function(x){return x.id === startNodeID});
                 var startNodeI = g.nodes.indexOf(startNode[0]);
-                */
                 var f = document.getElementById("endNode");
-                /*
                 var endNodeID = f.options[f.selectedIndex].value;
                 var endNode = g.nodes.filter(function(x){return x.id === endNodeID});
                 var endNodeI = g.nodes.indexOf(endNode[0]);
-                */
                 //startNode.replace(/['"]+/g, '');
                 //console.log(g.nodes[startNodeI]);
 
@@ -101,13 +108,7 @@
                 //console.log(outputFile);
                 console.log("Created graph");
                 */
-                sigma.parsers.json('json/graphData.json',   //supposed to utilize tempData.json listed above, graphData.json is a placeholder
-                {
-                    container: 'result',
-                    settings: {
-                    defaultNodeColor: '#ec5148'
-                    }
-                });
+                document.getElementById("output").innerHTML = mypath;
             }
         </script>
         
@@ -200,6 +201,12 @@
                 <div class="col-sm-4">
                     <button style="position: relative; width: 100%; margin-top: 15%;" class="btn btn-danger btn-lg" onclick="calculate()">Calculate Path</button>
                 </div>
+
+            </div>
+
+            <div class="row" style="background-color: aliceblue;">
+            
+                <div class="col-sm-12" id="output"></div>
 
             </div>
 
