@@ -45,15 +45,13 @@
                 settings: {
                 defaultNodeColor: '#ec5148'
                 }
+            },'json/graphData.json',   //supposed to utilize tempData.json listed above, graphData.json is a placeholder
+            {
+                container: 'result',
+                settings: {
+                defaultNodeColor: '#ec5148'
+                }
             });
-
-            sigma.parsers.json('json/graphData.json',   //supposed to utilize tempData.json listed above, graphData.json is a placeholder
-                {
-                    container: 'result',
-                    settings: {
-                    defaultNodeColor: '#ec5148'
-                    }
-                });
 
         </script>
 
@@ -73,7 +71,7 @@
                 g.populateNodes();
                 g.populateEdges();
                 var e = document.getElementById("startNode");
-                var startNodeID = e.options[e.selectedIndex].value;
+                var startNodeID = document.getElementById("startNode").options[e.selectedIndex].value;
                 var startNode = g.nodes.filter(function(x){return x.id === startNodeID});
                 var startNodeI = g.nodes.indexOf(startNode[0]);
                 var f = document.getElementById("endNode");
