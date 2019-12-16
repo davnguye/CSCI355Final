@@ -70,11 +70,11 @@
                 var g = new SLGraph();
                 g.populateNodes();
                 g.populateEdges();
-                var e = document.getElementsByName("startNode");
+                var e = document.getElementById("startNode");
                 var startNodeID = e.options[e.selectedIndex].value;
                 var startNode = g.nodes.filter(function(x){return x.id === startNodeID});
                 var startNodeI = g.nodes.indexOf(startNode[0]);
-                var f = document.getElementsByName("endNode");
+                var f = document.getElementById("endNode");
                 var endNodeID = f.options[f.selectedIndex].value;
                 var endNode = g.nodes.filter(function(x){return x.id === endNodeID});
                 var endNodeI = g.nodes.indexOf(endNode[0]);
@@ -140,7 +140,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h2 style="color: black">Start Node:</h2>
-                    <select name="startNode" class="form-control" placeholder="Select Start Node" required>
+                    <select id="startNode" class="form-control" placeholder="Select Start Node" required>
                         <option value="O">LD Stairwell</option>
                         <option value="E0">West Elevator</option>
                         <option value="E1">East Elevator</option>
@@ -169,7 +169,7 @@
 
                 <div class="col-sm-4">
                     <h2 style="color: black">End Node:</h2>
-                    <select name="endNode" class="form-control" placeholder="Select End Node" required>
+                    <select id="endNode" class="form-control" placeholder="Select End Node" required>
                         <option value="O">LD Stairwell</option>
                         <option value="E0">West Elevator</option>
                         <option value="E1">East Elevator</option>
