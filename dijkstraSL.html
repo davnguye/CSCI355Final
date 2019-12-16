@@ -59,7 +59,6 @@
 
     <body>
         <div id="front" class="jumbotron text-center">
-            <!--Empty for now, just a "front page" summary of the project, if you will-->
             <p>Please select a start node and end node of your choice to calculate the most optimal route.</p>
         </div>
 	
@@ -80,7 +79,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h2 style="color: black">Start Node:</h2>
-                    <select name="startNode" required>
+                    <select name="startNode" class="selectpicker" title="Select Start Node" required>
                         <option value="g.nodes[0]">LD Stairwell</option>
                         <option value="g.nodes[1]">West Elevator</option>
                         <option value="g.nodes[2]">East Elevator</option>
@@ -109,7 +108,7 @@
 
                 <div class="col-sm-4">
                     <h2 style="color: black">End Node:</h2>
-                    <select name="endNode" required>
+                    <select name="endNode" class="selectpicker" title="Select End Node" required>
                         <option value="g.nodes[0]">LD Stairwell</option>
                         <option value="g.nodes[1]">West Elevator</option>
                         <option value="g.nodes[2]">East Elevator</option>
