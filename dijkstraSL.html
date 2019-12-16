@@ -36,6 +36,7 @@
         
         <!-- script for graph in "graph" div -->
         <script>
+
             sigma.parsers.json('json/graphData.json',
             {
                 container: 'graph',
@@ -85,8 +86,13 @@
                     g.edges[edgeI].color = "#ffd500";
                     g.edges[revI].color = "#ffd500";
                 }//end for
-                g.createGraphJSON("tempData.json");
-                sigma.parsers.json('./tempData.json',
+                var fileString = g.createGraphJSON('tempData.json');
+                console.log(fileString);
+                //localStorage.setItem("outputFile", fileString);
+                //var outputFile = JSON.parse(fileString);
+                //console.log(outputFile);
+                console.log("Created graph");
+                sigma.parsers.json(fileString,
                 {
                     container: 'result',
                     settings: {
