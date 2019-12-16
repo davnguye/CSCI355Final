@@ -66,19 +66,19 @@
 
         <div class="container">
             <div class ="row">
-                <div class="col-sm-6">
+                <div style="background-color:white" class="col-sm-6">
                     <h1>Before:</h1>
                     <div id="graph"><!--This div contains a sigmaJS graph of SL 2nd Floor--></div>
                 </div>
 
-                <div class="col-sm-6">
+                <div style="background-color:white" class="col-sm-6">
                     <h1>After:</h1>
                     <div id="result"><!-- Contains result graph --></div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-4">
                     <h2>Start Node:</h2>
                     <select name="startNode" required>
                         <option value="g.nodes[0]">LD Stairwell</option>
@@ -105,7 +105,9 @@
                         <option value="g.nodes[21]">SL251</option>
                         <option value="g.nodes[22]">SL280</option>
                     </select>
+                </div>
 
+                <div class="col-sm-4">
                     <h2>End Node:</h2>
                     <select name="endNode" required>
                         <option value="g.nodes[0]">LD Stairwell</option>
@@ -132,10 +134,14 @@
                         <option value="g.nodes[21]">SL251</option>
                         <option value="g.nodes[22]">SL280</option>
                     </select>
+                </div>
 
+                <div class="col-sm-4">
                     <button onclick="calculate()">Calculate</button>
                 </div>
+
             </div>
+            
 	    </div>
 
     </body>
