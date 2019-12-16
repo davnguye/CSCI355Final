@@ -23,6 +23,13 @@
                 defaultNodeColor: '#ec5148'
                 }
             });
+            sigma.parsers.json('Main/tempData.json',
+            {
+                container: 'graph',
+                settings: {
+                defaultNodeColor: '#ec5148'
+                }
+            });
         </script>
             
         <!-- Bootstrap CDN -->
@@ -42,43 +49,85 @@
     <body>
         <div id="front" class="jumbotron text-center">
             <!--Empty for now, just a "front page" summary of the project, if you will-->
-            <h1>Current Progress</h1>
+            <p>Please select a start node and end node of your choice to calculate the most optimal route.</p>
         </div>
-
-        
 	
 
         <div class="container">
             <div class ="row">
-                <div class="col-sm-4">
-                    <div id="graph" align="center"><!--This div contains a sigmaJS graph of SL 2nd Floor--></div>
+                <div class="col-sm-6">
+                    <h1>Before:</h1>
+                    <div id="graph"><!--This div contains a sigmaJS graph of SL 2nd Floor--></div>
                 </div>
 
-                <div id="progress" class="col-sm-4">
-                    <!--This can be expanded on-->
-                    <h3>Progress</h3>
-                    <p>Our progress so far has been centered on research. Our project involves creating a graph of an indoor space. 
-                    We have been looking into the best ways to represent multiple floors in our graph and what existing technologies
-                    could be useful in creating our project.
-                    Below are the sources we have explored.</p>
-                    <ul>
-                    <li>Study on directed indoor path-finding</li>
-                    <li><a href="https://developers.google.com/maps/documentation/distance-matrix/intro">Google Distance Matrix API</a></li>
-                    <li><a href = "https://www.cise.ufl.edu/~mschneid/Research/papers/YS10AGILE.pdf">iNav Indoor Navigation Model</a></li>
-                    <li><a href = "https://pdfs.semanticscholar.org/4be8/3d168fd8582ca8773469b2da06560a6f288e.pdf">Indoor Spatial Analysis Using Space Syntax</a></li>
-                    <li><a href = "https://www.opengeospatial.org/standards/citygml">Standards of Indoor Spatial Information</a></li>
-                    </ul>
-                    <p>
-                    Our next step will be mapping out our possible paths inside the SL Building.
-                    </p>
+                <div class="col-sm-6">
+                    <h1>After:</h1>
+                    <div id="result"><!-- Contains result graph --></div>
                 </div>
-                
-                <div id="progress" class="col-sm-4">
-                    <h3>Updates</h3>
-                    <p>We have conducted a field study around SL to locate all necessary nodes/vertices and have measured required distances 
-                    needed for our edges.</p>
-                    <a href = "files/SLFloor2GraphWithCompass.png"> <img src="files/SLFloor2GraphWithCompass.png" alt="SL 2nd Floor Graph with Compass" height="75%" width="75%"> </a>
-                    <li><a href = "files/Map of SL Floor 2.xlsx">Link to data and plot of data points.</a></li>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Start Node:</h2>
+                    <select name="startNode">
+                        <option value="g.nodes[0]">LD Stairwell</option>
+                        <option value="g.nodes[1]">West Elevator</option>
+                        <option value="g.nodes[2]">East Elevator</option>
+                        <option value="g.nodes[3]">Stairway intersection (I0)</option>
+                        <option value="g.nodes[4]">LD intersection (I1)</option>
+                        <option value="g.nodes[5]">South hall intersection</option>
+                        <option value="g.nodes[6]">Southwest corner</option>
+                        <option value="g.nodes[7]">Southeast corner</option>
+                        <option value="g.nodes[8]">Northwest corner</option>
+                        <option value="g.nodes[9]">Northeast corner</option>
+                        <option value="g.nodes[10]">Bathroom intersection</option>
+                        <option value="g.nodes[11]">SL247 intersection</option>
+                        <option value="g.nodes[12]">SL251 intersection</option>
+                        <option value="g.nodes[13]">SL280 intersection</option>
+                        <option value="g.nodes[14]">LD exit</option>
+                        <option value="g.nodes[15]">West exit</option>
+                        <option value="g.nodes[16]">East exit</option>
+                        <option value="g.nodes[17]">Student lounge</option>
+                        <option value="g.nodes[18]">Women's restroom</option>
+                        <option value="g.nodes[19]">Men's restroom</option>
+                        <option value="g.nodes[20]">SL247</option>
+                        <option value="g.nodes[21]">SL251</option>
+                        <option value="g.nodes[22]">SL280</option>
+                    </select>
+
+                    <h2>End Node:</h2>
+                    <select name="endNode">
+                        <option value="g.nodes[0]">LD Stairwell</option>
+                        <option value="g.nodes[1]">West Elevator</option>
+                        <option value="g.nodes[2]">East Elevator</option>
+                        <option value="g.nodes[3]">Stairway intersection (I0)</option>
+                        <option value="g.nodes[4]">LD intersection (I1)</option>
+                        <option value="g.nodes[5]">South hall intersection</option>
+                        <option value="g.nodes[6]">Southwest corner</option>
+                        <option value="g.nodes[7]">Southeast corner</option>
+                        <option value="g.nodes[8]">Northwest corner</option>
+                        <option value="g.nodes[9]">Northeast corner</option>
+                        <option value="g.nodes[10]">Bathroom intersection</option>
+                        <option value="g.nodes[11]">SL247 intersection</option>
+                        <option value="g.nodes[12]">SL251 intersection</option>
+                        <option value="g.nodes[13]">SL280 intersection</option>
+                        <option value="g.nodes[14]">LD exit</option>
+                        <option value="g.nodes[15]">West exit</option>
+                        <option value="g.nodes[16]">East exit</option>
+                        <option value="g.nodes[17]">Student lounge</option>
+                        <option value="g.nodes[18]">Women's restroom</option>
+                        <option value="g.nodes[19]">Men's restroom</option>
+                        <option value="g.nodes[20]">SL247</option>
+                        <option value="g.nodes[21]">SL251</option>
+                        <option value="g.nodes[22]">SL280</option>
+                    </select>
+
+                    <button onclick="calculate()">Calculate</button>
+
+                    <!-- calculate() function -->
+                    <script>
+                        
+                    </script>
                 </div>
             </div>
 	    </div>
