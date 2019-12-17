@@ -75,15 +75,22 @@
                 var g = new SLGraph();
                 g.populateNodes();
                 g.populateEdges();
+
+                //Getting the selected start node element
                 var e = document.getElementById("startNode");
+                //Getting selected start node id
                 var startNodeID = e.options[e.selectedIndex].value;
+                //Getting selected start node object
                 var startNode = g.nodes.filter(function(x){return x.id === startNodeID});
+                //Getting selected start node index
                 var startNodeI = g.nodes.indexOf(startNode[0]);
+                //Repeat for selecte end node
                 var f = document.getElementById("endNode");
                 var endNodeID = f.options[f.selectedIndex].value;
                 var endNode = g.nodes.filter(function(x){return x.id === endNodeID});
                 var endNodeI = g.nodes.indexOf(endNode[0]);
 
+                //Getting path of nodes and distance from start to end
                 var mypath = g.dijkstra(g.nodes[startNodeI], g.nodes[endNodeI]);
 
                 //****IMPORTANT****
@@ -109,14 +116,22 @@
                 //console.log(outputFile);
                 console.log("Created graph");
                 */
+
+                //Getting index of last element
                 var lastElem = (mypath.path.length) - 1;
-                var pathString = "To get from "+mypath.path[0].label+ " to "+mypath.path[lastElem].label+ ": Go from ";
-                mypath.path.forEach(node => {
-                    pathString = pathString + " to "+ node.label;
-                });  //end for each 
+                //String to display the path information
+                var pathString = "To get from "+mypath.path[0].label+ " to "+mypath.path[lastElem].label+ ": Go from "+mypath.path[0].label;
+                //Adding path to string
+                for (let index = 1; index < mypath.path.length; index++) {
+                    pathString = pathString + " to "+ mypath.path[index].label;   
+                }//end for
+
+                //Adding distance
                 pathString = pathString + ", covering " + mypath.distance.toString() + " feet.";
                 var time = (mypath.distance/4.55).toPrecision(3);
+                //Adding to travel path
                 pathString = pathString + " At an average walking pace, this would take "+ time + " seconds.";
+                //Display path info
                 document.getElementById("output").innerHTML = pathString;
             }
         </script>
