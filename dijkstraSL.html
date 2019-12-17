@@ -116,7 +116,7 @@
                 });  //end for each 
                 pathString = pathString + ", covering " + mypath.distance.toString() + " feet.";
                 var time = (mypath.distance/4.55).toPrecision(3);
-                pathString = pathString + " At an average walking pace, this would take "+ time + " seconds.";
+                pathString = pathString + "<br> At an average walking pace, this would take "+ time + " seconds.";
                 document.getElementById("output").innerHTML = pathString;
             }
         </script>
