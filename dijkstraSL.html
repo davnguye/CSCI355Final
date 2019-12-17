@@ -129,8 +129,8 @@
                 //Adding distance
                 pathString = pathString + ", covering " + mypath.distance.toString() + " feet.";
                 var time = (mypath.distance/4.55).toPrecision(3);
-                //Adding to travel path
-                pathString = pathString + " At an average walking pace, this would take "+ time + " seconds.";
+                //Adding time to travel path
+                pathString = pathString + "<br> At an average walking pace, this would take "+ time + " seconds.";
                 //Display path info
                 document.getElementById("output").innerHTML = pathString;
             }
