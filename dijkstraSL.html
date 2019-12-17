@@ -83,8 +83,6 @@
                 var endNodeID = f.options[f.selectedIndex].value;
                 var endNode = g.nodes.filter(function(x){return x.id === endNodeID});
                 var endNodeI = g.nodes.indexOf(endNode[0]);
-                //startNode.replace(/['"]+/g, '');
-                //console.log(g.nodes[startNodeI]);
 
                 var mypath = g.dijkstra(g.nodes[startNodeI], g.nodes[endNodeI]);
 
@@ -111,7 +109,15 @@
                 //console.log(outputFile);
                 console.log("Created graph");
                 */
-                document.getElementById("output").innerHTML = mypath;
+                var lastElem = (mypath.path.length) - 1;
+                var pathString = "To get from "+mypath.path[0].label+ " to "+mypath.path[lastElem].label+ ": Go from ";
+                mypath.path.forEach(node => {
+                    pathString = pathString + " to "+ node.label;
+                });  //end for each 
+                pathString = pathString + ", covering " + mypath.distance.toString() + " feet.";
+                var time = (mypath.distance/4.55).toPrecision(3);
+                pathString = pathString + " At an average walking pace, this would take "+ time + " seconds.";
+                document.getElementById("output").innerHTML = pathString;
             }
         </script>
         

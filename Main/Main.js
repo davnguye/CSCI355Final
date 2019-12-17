@@ -209,7 +209,7 @@ class SLGraph{
             //Creating array of node objects
             var nodeArray = [	{
                 id: "O",
-                label: "Origin",
+                label: "LD Stairwell",
                 x: "0",
                 y: "0"
             },
@@ -227,13 +227,13 @@ class SLGraph{
             },
             {
                 id: "I0",
-                label: "Intersection",
+                label: "Stairway Intersection",
                 x: "0",
                 y: "0.2"
             },
             {
                 id: "I1",
-                label: "Intersection",
+                label: "LD Intersection",
                 x: "-0.24",
                 y: "0.2"
             },
@@ -694,7 +694,7 @@ class SLGraph{
         srcToTrgtPath.unshift(sourceNode);
         let targetI = distances.map(function(x){return x.node}).indexOf(targetNode);
         //Return the path and the distance (rouned to three sig figs) to the target node from the source
-        return {path: srcToTrgtPath, distance: +distances[targetI].distance.toPrecision(3)};
+        return {path: srcToTrgtPath, distance: +(((distances[targetI].distance * 9.5)/.18).toPrecision(4))};
    }//end dijkstra
 }//end SL Graph class
 
@@ -704,10 +704,15 @@ Script that could be used in generating path given a source (g.nodes[0] in this 
 
 */
 
-//var g = new SLGraph();
+/*
+var g = new SLGraph();
 
-//var mypath = g.dijkstra(g.nodes[0], g.nodes[20]);
+g.populateNodes();
+g.populateEdges();
 
+var mypath = g.dijkstra(g.nodes[0], g.nodes[20]);
+console.log(mypath.distance);
+*/
 
 /*for (let i = 1; i < mypath.path.length; i++) {
     //Find the edge between two nodes in path
