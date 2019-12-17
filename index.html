@@ -39,7 +39,7 @@
     <body>
         <div id="front" class="jumbotron text-center">
             <!--Empty for now, just a "front page" summary of the project, if you will-->
-		<h1>Current Progress</h1>
+		<h1>Learning JavaScript with Dijkstra's Algorithm</h1>
 		<div class="container">
 			<div class="col-sm-12" id="graph" style="max-width: 500px; height: 500px; margin: auto;"><!--This div contains a sigmaJS graph of SL 2nd Floor--></div>
         </div>
@@ -69,7 +69,7 @@
 
 			<div class="col-sm-4">
 			    <!--This can be expanded on-->
-			    <h3>Progress</h3>
+			    <h3>Initial Progress</h3>
 			    <p>Our progress so far has been centered on research. Our project involves creating a graph of an indoor space. 
 				We have been looking into the best ways to represent multiple floors in our graph and what existing technologies
 				could be useful in creating our project.
@@ -87,31 +87,35 @@
 			</div>
 			
 			<div class="col-sm-4">
-				<h3>Updates</h3>
+				<h3>Updates: 11/12</h3>
 				<p>We have conducted a field study around SL to locate all necessary nodes/vertices and have measured required distances 
 				   needed for our edges.</p>
 				<a href = "files/SLFloor2GraphWithCompass.png"> <img src="files/SLFloor2GraphWithCompass.png" alt="SL 2nd Floor Graph with Compass" height="75%" width="75%"> </a>
 				<li><a href = "files/Map of SL Floor 2.xlsx">Link to data and plot of data points.</a></li>
-				<li><a href="dijkstraSL.html">Link to Final Project</a></li>
+				<li><a href="dijkstraSL.html">LINK to IMPLEMENTATION</a></li>
 			</div>
 		</div>
 
 		<div id="documentation" class="row">
 
 			<div class="col-sm-4">
-				<h3>Pros of JavaScript</h3>
+				<h3>Pros of Using JavaScript</h3>
 				<ul>
 					<li>Easy readability and writability.</li>
 					<li>Loose guidance, which may also be a con.</li>
 					<li>Plenty of libraries and documentation to refer to.</li>
+					<li>First class functions and objects</li>
+					<li>Integratability with HTML5</li>
 					<!--insert text-->
 				</ul>
 			</div>
 
 			<div class="col-sm-4">
-				<h3>Cons of JavaScript</h3>
+				<h3>Cons of Using JavaScript</h3>
 				<ul>
-					<li>Doesn't allow for expressiveness</li>
+					<li>Expressive, but hard to transition between server and browser.</li>
+					<li>Vanilla JavaScript has no file I/O</li>
+
 					<!--insert text-->
 				</ul>
 			</div>
@@ -128,8 +132,29 @@
 				</ul>
 			</div>
 		</div>
-
-	    </div>
+		<div class ="row" id="documentation">
+			<div class="col-sm-12">
+				<h3>Final Thoughts/Conclusions</h3>
+				<p>Overall, the dynamic nature of JavaScript simplified many of the difficulties 
+				associated with the implementation a project of this nature. Being a high level language,
+				writability and expressiveness were two of the biggest "pros" when working with the
+				data structures and algorithms needed for a real-world application of Dijkstra's Algorithm.
+				Furthermore, the seamless integration of JavaScript in HTML files allowed for relative ease
+				in using user selected information in the JavaScript code created outside of the browser environment.
+				One of the biggest "cons" with working with JavaScript is its lack of native I/O, requiring a separate
+				JavaScript runtime environment to be used, such as the use of Node.js in this project. Node.js allowed for
+				the development and testing of our application outside of a browser runtime environment. However, using Node.js
+				modules in the browser proved to be a challenge, requiring other external JavaScript tools and libraries for 
+				handling the modular programming used in Node.js applications. In summation, JavaScript worked very well 
+				for our web-based application because of its interaction with HTML documents and writability and expressiveness.
+				While server-side development is definitely possible with tools like Node.js at our disposal, we may choose a 
+				different language for server-side aspects of a project of this nature in the future, but would still use JavaScript
+				for client-side aspects because of the "pros" mentioned.
+			</p>
+			<li><a href="dijkstraSL.html">LINK to IMPLEMENTATION</a></li>
+			</div>
+		</div>
+		</div>
 
     </body>
 </html>
