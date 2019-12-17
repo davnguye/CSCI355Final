@@ -205,8 +205,8 @@ class SLGraph{
             this.nodes = [];
             //Using node.js file sync to read in node data
             //var fs = require('fs');
-            //Reading JSON file into string
 
+            //Creating array of node objects
             var nodeArray = [	{
                 id: "O",
                 label: "Origin",
@@ -344,9 +344,11 @@ class SLGraph{
                 label: "SL280",
                 x: "1.26",
                 y: "1.18"
-            }]//fs.readFileSync('/nodes.json','utf8');
+            }];
+
             //Parsing JSON string into object array
             //var nodeArray = JSON.parse(data);
+
             //Populating node array
             nodeArray.forEach(node => {
                 let newNode = new SLNode(+node.x, +node.y, node.id, node.label);
@@ -451,11 +453,11 @@ class SLGraph{
         //Method to create JSON file with graph data
         createGraphJSON(outputFile){
             //Creating a file stream (part of node modules)
-                //var fs = require('fs');
             //var fs = require('fs');
+
             //Loading nodes data into array
             //var nodeArr = JSON.parse(fs.readFileSync('nodes.json', 'utf8'));
-            //Adjusting and adding node infor for readability
+            //Adjusting and adding node info for readability
             var nodeArray = [	{
                 id: "O",
                 label: "Origin",
@@ -699,12 +701,6 @@ class SLGraph{
 /*
 
 Script that could be used in generating path given a source (g.nodes[0] in this case) and target (g.nodes[20])
-Adjustment that will have to be made: File I/O is not supported in browser, but there are APIs that may be able to perform
-tasks needed.
-
-PROPOSED WAY AROUND FILE I/O: 
-This link: https://www.w3schools.com/Js/js_json_parse.asp
-Shows how to access JSON files from the server, could change code including file I/O to reflect this
 
 */
 
