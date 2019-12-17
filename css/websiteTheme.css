@@ -42,10 +42,6 @@ li, li a{						/* Define the formatting for the links to the labs */
 	border-radius: 10px;
 	background-color: white;
 }
-#graph{
-      	width: 500px;
-      	height: 500px;
-}
 #assignments ul {
 	float:left;
 	width: 300px;
